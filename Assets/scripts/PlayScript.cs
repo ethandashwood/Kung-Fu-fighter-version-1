@@ -86,6 +86,7 @@ public class PlayScript : MonoBehaviour
         if (isMoving == true)
         {
             anim.SetBool("isCrouch", false);
+
         }
 
         if (isMoving == false && pPunch == true)
@@ -93,13 +94,9 @@ public class PlayScript : MonoBehaviour
 
             anim.SetBool("isPunch", true);
 
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName("playerpunch") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.5f) ;
-            {
-                anim.SetBool("isPunch", false);
-                Debug.Log("punch anim finished");
-            }
 
         }
+
 
     }
 
