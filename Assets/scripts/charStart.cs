@@ -12,6 +12,10 @@ public class charStart : MonoBehaviour
     {
 
         Instantiate(enemyPre, new Vector3(-95, 3, 0), Quaternion.identity);
+        Instantiate(enemyPre, new Vector3(-105, 3, 0), Quaternion.identity);
+        Instantiate(enemyPre, new Vector3(-93, 3, 0), Quaternion.identity);
+        Instantiate(enemyPre, new Vector3(-100, 3, 0), Quaternion.identity);
+
 
     }
 

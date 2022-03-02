@@ -17,10 +17,10 @@ public class PlayScript : MonoBehaviour
     static bool isMoving;
     static bool pPunch;
 
+
     //Other
     private Animator anim;
     public GameObject enemy;
-
 
     void OnTriggerEnter2D(Collider2D enemy)
     {
@@ -40,15 +40,35 @@ public class PlayScript : MonoBehaviour
         pCrouch = false;
         pPunch = false;
 
+
         anim = GetComponent<Animator>();
+        print("anim=" + anim);
 
     }
 
    
     void Update()
     {
+        if (isMoving == false)
+        {
+
+            anim.SetBool("isIdle", true);
+        }
+
+        print("left=" + moveLeft + "  right=" + moveRight);
+    }
+    void LateUpdate()
+    {
 
 
+        isMoving = false;
+
+        /* while (isMoving == false)
+        {
+            anim.SetBool("isIdle", true);
+            anim.SetBool("isCrouch", false);
+            anim.SetBool("isWalking", true);
+        }*/
 
         if (moveLeft)
         {
@@ -58,6 +78,8 @@ public class PlayScript : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0f, 0);
             anim.SetBool("isWalking", true);
             anim.SetBool("isIdle", false);
+            anim.SetBool("isPunch", false);
+            anim.SetBool("isCrouch", false);
 
             isMoving = true;
 
@@ -71,6 +93,8 @@ public class PlayScript : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180f, 0);
             anim.SetBool("isWalking", true);
             anim.SetBool("isIdle", false);
+            anim.SetBool("isPunch", false);
+            anim.SetBool("isCrouch", false);
 
             isMoving = true;
 
@@ -80,19 +104,18 @@ public class PlayScript : MonoBehaviour
         {
             pSpeed = 0.0f;
             anim.SetBool("isCrouch", true);
+            anim.SetBool("isWalking", false);
+            anim.SetBool("isIdle", false);
+            anim.SetBool("isPunch", false);
 
         }
 
-        if (isMoving == true)
-        {
-            anim.SetBool("isCrouch", false);
 
-        }
-
-        if (isMoving == false && pPunch == true)
+        if (pPunch == true)
         {
 
-            anim.SetBool("isPunch", true);
+
+            StartCoroutine(PunchWait());
 
 
         }
@@ -105,10 +128,8 @@ public class PlayScript : MonoBehaviour
         moveRight = false;
         moveLeft = false;
         pSpeed = 0.0f;
-        anim.SetBool("isWalking", false);
-        anim.SetBool("isIdle", true);
-        anim.SetBool("isCrouch", false);
-        isMoving = false;
+        print("stop!");
+        
     }
 
 
@@ -124,17 +145,23 @@ public class PlayScript : MonoBehaviour
         pCrouch = true;
     }
 
-
     public void IsRight()
     {
         moveRight = true;
-
     }
-
 
     public void IsPunch()
     {
         pPunch = true;
+    }
+
+    IEnumerator PunchWait()
+    {
+        anim.SetBool("isPunch", true);
+
+            yield return new WaitForSeconds(2);
+
+        anim.SetBool("isPunch", false);
     }
 
 }

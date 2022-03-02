@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class enemyBehaviour : MonoBehaviour
 {
-    static bool punched;
-    public float Speed;
-    public static float enSpeed;
-    public static bool inRange;
+    public bool punched;
+    private float Speed;
+    public float enSpeed;
+    public bool inRange;
 
     public float dSpeed;
     public GameObject target; 
