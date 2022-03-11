@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2039445407534002627}
   - component: {fileID: 2039445407534002626}
   - component: {fileID: 2039445407534002625}
-  - component: {fileID: 2039445407534002636}
   - component: {fileID: 2039445407534002637}
+  - component: {fileID: 4573853819132872203}
+  - component: {fileID: 4653614126137597344}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -112,20 +113,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2843328, y: 2}
   m_EdgeRadius: 0
---- !u!114 &2039445407534002636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2039445407534002624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 621b6046870846d459a8d4c903c93806, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enSpeed: 5.5
-  target: {fileID: 3634036254814889533, guid: a4b31885b0bda6640ace1a4a54684ba7, type: 3}
 --- !u!95 &2039445407534002637
 Animator:
   serializedVersion: 3
@@ -145,3 +132,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4573853819132872203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039445407534002624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621b6046870846d459a8d4c903c93806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 5.5
+  inRange: 0
+  dSpeed: 0
+  target: {fileID: 3634036254814889533, guid: a4b31885b0bda6640ace1a4a54684ba7, type: 3}
+--- !u!114 &4653614126137597344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039445407534002624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab588c8b40ffe448bcdcadf8f58c353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

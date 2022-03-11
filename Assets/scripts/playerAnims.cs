@@ -24,17 +24,24 @@ public class playerAnims : MonoBehaviour
         
         
 
-        while (playWalkingAnim)
+        if (playWalkingAnim)
         {
             anim.SetBool("isWalking", true);
         }
+        else
+        {
+            anim.SetBool("isWalking", false);
+        }
 
 
-        while (playIdleAnim)
+        if (playIdleAnim)
         {
             anim.SetBool("isIdle", true);
         }
-
+        else
+        {
+            anim.SetBool("isIdle", false);
+        }
 
     }
 

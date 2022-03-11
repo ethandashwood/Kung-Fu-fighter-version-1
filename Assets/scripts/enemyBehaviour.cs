@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class enemyBehaviour : MonoBehaviour
 {
-    public bool punched;
-    private float Speed;
-    public float enSpeed;
+    public static bool punched;
+    public float Speed;
+    private float enSpeed;
     public bool inRange;
 
     public float dSpeed;
@@ -20,7 +20,7 @@ public class enemyBehaviour : MonoBehaviour
         dSpeed = 0.0f;
     }
 
-    void OnTriggerEnter2D(Collider2D target)
+    void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Enemy is stopping");
         enSpeed = 0.0f;
@@ -38,19 +38,10 @@ public class enemyBehaviour : MonoBehaviour
 
     void Update()
     {
-        if (inRange == false)
-        {
-            transform.position += new Vector3(enSpeed * Time.deltaTime, 0, 0);
-        }
+        punched = false;
 
-        if (inRange == true && punched == true)
-        {
-            dSpeed = -4.0f;
-            enSpeed = 0.0f;
-            Debug.Log("HELP");
-            transform.position += new Vector3(enSpeed, dSpeed * Time.deltaTime, 0);
-        }
-
+        transform.position += new Vector3(enSpeed * Time.deltaTime, 0, 0);       
+       
     }
 
 
@@ -58,6 +49,7 @@ public class enemyBehaviour : MonoBehaviour
     public void Punch()
     {
         punched = true;
+        Debug.Log("punch is starting");
     }
 
 }

@@ -15,7 +15,7 @@ public class PlayScript : MonoBehaviour
     static bool moveLeft;
     static bool moveRight;
     static bool pJump;
-    static bool pPunch;
+    public static bool pPunch;
 
 
     //Other
@@ -33,7 +33,7 @@ public class PlayScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         pSpeed = 0.0f;
 
-
+        pPunch = false;
         moveRight = false;
         moveLeft = false;
     }
