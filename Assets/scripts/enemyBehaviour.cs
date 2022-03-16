@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class enemyBehaviour : MonoBehaviour
 {
-    public static bool punched;
+
     public float Speed;
     private float enSpeed;
     public bool inRange;
 
-    public float dSpeed;
     public GameObject target; 
 
     void Start()
     {
-        punched = false;
+
         enSpeed = Speed;
         inRange = false;
-        dSpeed = 0.0f;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -38,18 +36,9 @@ public class enemyBehaviour : MonoBehaviour
 
     void Update()
     {
-        punched = false;
 
-        transform.position += new Vector3(enSpeed * Time.deltaTime, 0, 0);       
-       
+        transform.position += new Vector3(enSpeed * Time.deltaTime, 0, 0);
     }
 
-
-
-    public void Punch()
-    {
-        punched = true;
-        Debug.Log("punch is starting");
-    }
 
 }

@@ -23,7 +23,7 @@ public class PlayScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D enemy)
     {
-
+        pSpeed = 0.0f;
     }
 
 

@@ -11,8 +11,8 @@ public class charStart : MonoBehaviour
     void Start()
     {
 
-     //   object a = Instantiate(enemyPre, new Vector3(-95, 3, 0), Quaternion.identity);
-      //  object b = Instantiate(enemyPre, new Vector3(-90, 3, 0), Quaternion.identity);
+        //object a = Instantiate(enemyPre, new Vector3(-95, 3, 0), Quaternion.identity);
+        //object b = Instantiate(enemyPre, new Vector3(-90, 3, 0), Quaternion.identity);
 
 
 
